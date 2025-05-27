@@ -13,4 +13,4 @@ POSSIBLE_HOURLY_RATE_COLUMNS: Tuple[str, ...] = (
     "salary",
 )
 
-EXPECTED_COLUMNS: int = 6 # id,email,name,department,hours_worked,hourly_rate
+EXPECTED_COLUMNS: int = 6  # id,email,name,department,hours_worked,hourly_rate

@@ -1,0 +1,67 @@
+[tool.poetry]
+name = "salary-reporter"
+version = "0.1.0"
+description = "Script for calculating employee salaries and generating reports."
+authors = ["AI Assistant <ai@example.com>"]
+readme = "README.md"
+packages = [{include = "salary_reporter", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.0"
+pytest-cov = "^4.0"
+ruff = "^0.3.0"
+
+[tool.poetry.scripts]
+salary-report = "salary_reporter.main:run_cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 88
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # Pyflakes
+    "W",   # pycodestyle warnings
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "A",   # flake8-builtins
+    "C4",  # flake8-comprehensions
+    "PT",  # flake8-pytest-style
+    "Q",   # flake8-quotes
+    "RUF", # Ruff-specific rules
+    "SIM", # flake8-simplify
+    "TID", # flake8-tidy-imports
+    "ARG", # flake8-unused-arguments (includes ARG001)
+    "N",   # pep8-naming
+    "ANN", # flake8-annotations (ANN001, ANN101, ANN201 enforced, others optional)
+]
+ignore = [
+    "ANN101",
+    "ANN102",
+    "COM812",
+]
+
+  [tool.ruff.lint.flake8-annotations]
+  mypy-init-return = true
+  suppress-none-returning = true
+  allow-star-arg-any = true
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "--cov=salary_reporter --cov-branch --cov-report=term-missing --cov-report=html"
+testpaths = ["tests"]

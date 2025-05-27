@@ -23,4 +23,4 @@ class EmployeeData:
     name: str
     department: str
     hours_worked: int
-    hourly_rate: Decimal # Using Decimal for financial precision
+    hourly_rate: Decimal  # Using Decimal for financial precision
