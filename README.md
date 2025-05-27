@@ -59,7 +59,7 @@ This project utilizes [Poetry](https://python-poetry.org/) for robust dependency
 
 2.  **Clone the Repository:**
     ```bash
-    git clone <your_repository_url>
+    git clone https://github.com/fluffy-dev/salary_calculator_project.git
     cd salary_calculator_project
     ```
 
